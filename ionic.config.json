@@ -1,0 +1,7 @@
+{
+  "name": "app-promolandia-v2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
