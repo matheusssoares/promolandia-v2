@@ -1,0 +1,115 @@
+<ion-header class="ion-no-border">
+    <app-header-top [logo]="'assets/img/logo-principal.svg'"></app-header-top>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+        <ion-item class="mg-negative-12 width-100" lines="none">
+          <ion-searchbar placeholder="Pesquise por algo"></ion-searchbar>
+        </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item lines="none">
+        <ion-button fill="clear">
+          <ion-icon slot="start" name="location"></ion-icon>
+          <span class="color-black">Bujaru PA, PA - 68670-000</span>
+        </ion-button>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-card class="width-100 border-left-primary">
+        <ion-row class="padding-2">
+          <ion-col size="8">
+            <p style="margin-left: 5px; font-weight: 500;">Crie um anúncio</p>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button class="ion-text-capitalize" color="light" expand="block">
+              Entrar
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <app-slide-banner></app-slide-banner>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="8">
+        <h4 style="margin-left: 5px" class="title-700">Categorias</h4>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button style="margin-top: 10px;" class="ion-text-capitalize ion-float-right" color="dark" fill="clear" expand="block">
+          Ver todas
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="12">
+        <div class="width-100 categorias-container">
+          <ion-card class="card-categoria" *ngFor="let cat of categorias">
+            <ion-row>
+              <ion-col size="12" class="ion-text-center">
+                <img class="img-categoria" [src]="cat.imagem">
+                <h6 class="text-categoria ion-text-capitalize">{{ cat.nome.toLowerCase() }}</h6>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="8">
+        <h4 style="margin-left: 5px" class="title-700">Anúncios mais vistos</h4>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button style="margin-top: 10px;" class="ion-text-capitalize ion-float-right" color="dark" fill="clear" expand="block">
+          Ver todos
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <app-slide-anuncios></app-slide-anuncios>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col size="8">
+          <h4 style="margin-left: 5px" class="title-700">Parceiros recentes</h4>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button style="margin-top: 10px;" class="ion-text-capitalize ion-float-right" color="dark" fill="clear" expand="block">
+            Ver todos
+          </ion-button>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <app-slide-parceiros></app-slide-parceiros>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="8">
+        <h4 style="margin-left: 5px" class="title-700">Melhores promoções</h4>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button style="margin-top: 10px;" class="ion-text-capitalize ion-float-right" color="dark" fill="clear" expand="block">
+          Ver todos
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <app-slide-anuncios></app-slide-anuncios>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

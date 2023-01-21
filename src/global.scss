@@ -24,3 +24,61 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+ion-toolbar {
+  min-height: 3em;
+}
+
+ion-searchbar {
+  --border-radius: 25px !important;
+}
+
+ion-button {
+  height: 3.5em;
+  font-weight: bold;
+  text-transform: initial;
+}
+
+.mg-negative-12 {
+  margin-top: -12px;
+}
+.font-10 {
+  font-size: 12px !important;
+  margin-left: -1em;
+  z-index: 10000;
+}
+
+.color-black {
+  color: #333 !important;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.padding-2 {
+  padding: 2px !important;
+}
+.title-700 {
+  font-weight: 700;
+}
+.text-truncate {
+  overflow: hidden !important; text-overflow: ellipsis !important;  white-space: nowrap !important;
+}
+.multine-ellipsis {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+.border-left-primary {
+  border-left: 5px solid var(--ion-color-primary);
+}

@@ -1,0 +1,19 @@
+.scroll-container{
+  overflow: auto;
+  white-space: nowrap;
+  padding: 7px 70px 5px 5px;
+  background: transparent;
+  height: 100%;
+  border-radius:15px;
+}
+
+.gridscroll{
+  display:inline-block;
+}
+
+.gridscroll img {
+  border-radius: 10px;
+  height: 15em;
+  margin-right:22px;
+  width: 100%;
+}

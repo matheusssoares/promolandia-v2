@@ -1,0 +1,40 @@
+.scroll-container-anuncios {
+  overflow: auto;
+  white-space: nowrap;
+  background: transparent;
+  height: 100%;
+}
+
+.card-slide-anuncios {
+  display:inline-block;
+  width: 23em;
+}
+
+.label-premium {
+  padding: 1em;
+  background-color: var(--ion-color-light);
+  width: 11em;
+  border-radius: 25px;
+  color: var(--ion-color-primary);
+  font-weight: 600;
+}
+.img-anuncios {
+  height: 12.5em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-title-anuncios {
+  padding: 3px;
+  font-size: 1em;
+  font-weight: 700;
+}
+.icon-anuncios {
+  font-size: 2em;
+}
+ion-avatar img{
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}

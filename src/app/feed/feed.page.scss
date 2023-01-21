@@ -1,0 +1,20 @@
+.categorias-container {
+  overflow: auto;
+  white-space: nowrap;
+  background: transparent;
+  height: 100%;
+}
+.img-categoria {
+  margin-top: 5px;
+  height: 4em;
+}
+.card-categoria {
+  display:inline-block;
+  width: 10em;
+  height: 8em;
+}
+.text-categoria {
+  margin-top: 4px;
+  font-weight: 500;
+  color: #737373;
+}

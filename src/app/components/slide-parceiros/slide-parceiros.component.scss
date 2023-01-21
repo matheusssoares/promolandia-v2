@@ -1,0 +1,15 @@
+.container-parceiros {
+  overflow: auto;
+  white-space: nowrap;
+  background: transparent;
+  height: 100%;
+}
+.img-logo-parceiros {
+  border-radius: 50%;
+  display:inline-block;
+}
+.logoAnunciante {
+  object-fit: contain;
+  width: 7em;
+  height: 7em;
+}

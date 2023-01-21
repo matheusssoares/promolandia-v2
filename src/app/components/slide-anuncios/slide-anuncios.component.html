@@ -1,0 +1,55 @@
+<div class="scroll-container-anuncios">
+  <ion-card class="card-slide-anuncios" *ngFor="let i of anuncios">
+    <ion-row>
+      <ion-col size="12">
+        <div>
+          <p class="label-premium">Anúncio Premium</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <img [src]="i.imagem" class="img-anuncios ion-text-center">
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <p class="text-title-anuncios multine-ellipsis">
+          {{ i.nome }}
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="margin-left: 3px; margin-top: -24px">
+      <ion-col size="12">
+        <p class="ion-no-padding">Menor Preço</p>       
+      </ion-col>
+      <ion-col style="margin-top: -24px" size="12">
+        <strong>{{i.preco}}</strong>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <hr class="width-100" style="height: 1px; background: #cdcccc; margin-top: 13px">
+    </ion-row>
+
+    <ion-row style="height: 45px;">
+      <ion-col size="2">
+        <ion-icon class="icon-anuncios" name="heart-outline"></ion-icon>
+      </ion-col>
+      <ion-col offset="" size="6">
+        
+      </ion-col>
+      <ion-col size="2">
+        <ion-icon class="icon-anuncios" name="chatbubble-outline"></ion-icon>
+      </ion-col>
+      <ion-col size="2">
+        <ion-avatar>
+          <img [src]="i.logoAnunciante">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</div>
