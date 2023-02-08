@@ -1,10 +1,15 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'app-promolandia-v2',
+  appId: 'br.com.promolandia',
+  appName: 'Promolândia',
   webDir: 'www',
-  bundledWebRuntime: false
+  bundledWebRuntime: false,
+  server: {
+    androidScheme: 'https',
+    cleartext: true,
+    url: 'https://10.0.0.151:8100'
+  }
 };
 
 export default config;

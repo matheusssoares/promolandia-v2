@@ -1,0 +1,29 @@
+<app-custom-header></app-custom-header>
+
+<ion-content class="ion-padding">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <h1 class="bold txt-title">Cadastrar empresa</h1>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item fill="outline">
+          <ion-label position="floating">CNPJ</ion-label>
+          <ion-input></ion-input>
+          <ion-icon name="business-outline" slot="end"></ion-icon>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="margin-top: 16px">
+      <ion-col size="12">
+        <ion-button (click)="getEmpresa()" class="btn-size" expand="block">
+          Próximo
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

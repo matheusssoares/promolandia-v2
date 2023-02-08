@@ -10,7 +10,9 @@ export class OptionNavigationPage implements OnInit {
 
   constructor(
     private routesService: RoutesService
-  ) { }
+  ) {
+
+  }
 
   ngOnInit() {
   }

@@ -1,7 +1,4 @@
-<ion-header class="ion-no-border">
-  <app-header-top [logo]="'assets/img/logo-principal.svg'"></app-header-top>
-</ion-header>
-
+<app-custom-header></app-custom-header>
 <ion-content class="ion-padding">
   <ion-grid fixed>
     <ion-row>
@@ -37,7 +34,7 @@
     </ion-row>
     <ion-row style="margin-top: -10px">
       <ion-col size="12">
-        <ion-button class="btn-size" (click)="signup()" expand="block" color="light">
+        <ion-button (click)="goTo('painel/criar-conta')" class="btn-size" expand="block" color="light">
           Criar conta
         </ion-button>
       </ion-col>
@@ -45,7 +42,7 @@
 
     <ion-row>
       <ion-col size="12">
-        <ion-button class="btn-size" (click)="notAccount()" expand="block" fill="clear">
+        <ion-button (click)="goTo('app')" class="btn-size" expand="block" fill="clear">
           Acessar modo vitrine
         </ion-button>
       </ion-col>

@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { SlideBannerComponent } from 'src/app/components/slide-banner/slide-banner.component';
 import { SlideAnunciosComponent } from 'src/app/components/slide-anuncios/slide-anuncios.component';
 import { SlideParceirosComponent } from 'src/app/components/slide-parceiros/slide-parceiros.component';
+import { CustomHeaderComponent } from 'src/app/components/custom-header/custom-header.component';
 
 
 
@@ -13,7 +14,8 @@ import { SlideParceirosComponent } from 'src/app/components/slide-parceiros/slid
     HeaderTopComponent,
     SlideBannerComponent,
     SlideAnunciosComponent,
-    SlideParceirosComponent
+    SlideParceirosComponent,
+    CustomHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { SlideParceirosComponent } from 'src/app/components/slide-parceiros/slid
     HeaderTopComponent,
     SlideBannerComponent,
     SlideAnunciosComponent,
-    SlideParceirosComponent
+    SlideParceirosComponent,
+    CustomHeaderComponent
   ]
 })
 export class SharedModule { }

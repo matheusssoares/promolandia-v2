@@ -1,0 +1,56 @@
+<app-custom-header></app-custom-header>
+<ion-content class="ion-padding">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <h1 class="bold txt-title">Criar conta</h1>
+      </ion-col>
+    </ion-row>
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+      <ion-row>
+        <ion-col size="12">
+          <ion-item fill="outline">
+            <ion-label position="floating">Nome completo</ion-label>
+            <ion-input type="text" formControlName="name" autocomplete="off"></ion-input>
+            <ion-icon name="person-outline" slot="end"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item fill="outline">
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input  type="email" formControlName="email" autocomplete="off"></ion-input>
+            <ion-icon name="mail-outline" slot="end"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item fill="outline">
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+            <ion-icon name="lock-closed-outline" slot="end"></ion-icon>
+          </ion-item>
+        </ion-col>
+          <ion-item fill="outline">
+            <ion-checkbox formControlName="aceitarTermo" required="" slot="start"></ion-checkbox>
+            <p class="desc-txt">Concordo com os <b>Termos de Uso</b> e a <b>Política de Privacidade</b> do Aplicativo Promolândia.</p>
+          </ion-item>
+      </ion-row>
+
+      <ion-row style="margin-top: 16px">
+        <ion-col size="12">
+          <ion-button type="submit" [disabled]="!form.valid" class="btn-size" expand="block">
+            Criar conta
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button (click)="goBack()" class="btn-size" expand="block" fill="clear">
+          Voltar para login
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

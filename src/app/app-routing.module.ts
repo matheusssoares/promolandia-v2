@@ -19,6 +19,14 @@ const routes: Routes = [
   {
     path: 'painel/login',
     loadChildren: () => import('./painel/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'painel/criar-conta',
+    loadChildren: () => import('./painel/criar-conta/criar-conta.module').then( m => m.CriarContaPageModule)
+  },
+  {
+    path: 'painel/cadastrar-empresa',
+    loadChildren: () => import('./painel/cadastrar-empresa/cadastrar-empresa.module').then( m => m.CadastrarEmpresaPageModule)
   }
 ];
 @NgModule({
