@@ -17,7 +17,8 @@ export class DashboardPage implements OnInit, OnDestroy {
     private navController: NavController
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.authService.showLoading('Aguarde...');
     const buscar = this.authService.getCurrentUser().subscribe((data) => {
       this.user = data;
       this.validarEmpresas(this.user);
@@ -36,6 +37,9 @@ export class DashboardPage implements OnInit, OnDestroy {
     // eslint-disable-next-line no-debugger
     if(!validation) {
       this.navController.navigateRoot(['painel/cadastrar-empresa']);
+      await this.authService.hideLoading();
+    } else {
+      await this.authService.hideLoading();
     }
   }
 

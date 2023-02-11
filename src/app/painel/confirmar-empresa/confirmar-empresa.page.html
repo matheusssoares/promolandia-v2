@@ -53,12 +53,10 @@
       <p><b>TIPO:</b></p>
       <p class="margin-top-16">{{ empresa.tipo }}</p>
     </ion-text>
+
+    <ion-button (click)="onClick()" class="btn-size" expand="block">
+      Confirmar
+    </ion-button>
   </ion-card>
-  <ion-footer>
-    <ion-toolbar>
-      <ion-button (click)="onClick()" class="btn-size" expand="block">
-        Confirmar
-      </ion-button>
-    </ion-toolbar>
-  </ion-footer>
+
 </ion-content>
