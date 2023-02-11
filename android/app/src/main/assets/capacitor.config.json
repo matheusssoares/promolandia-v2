@@ -1,6 +1,6 @@
 {
 	"server": {
-		"url": "http://10.0.0.151:8100"
+		"cleartext": true
 	},
 	"appId": "com.example.app",
 	"appName": "app-promolandia-v2",
