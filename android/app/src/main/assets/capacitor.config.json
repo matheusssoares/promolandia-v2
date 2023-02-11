@@ -1,10 +1,9 @@
 {
-	"appId": "br.com.promolandia",
-	"appName": "Promolândia",
-	"webDir": "www",
-	"bundledWebRuntime": false,
 	"server": {
-		"androidScheme": "https",
-		"cleartext": true
-	}
+		"url": "http://10.0.0.151:8100"
+	},
+	"appId": "com.example.app",
+	"appName": "app-promolandia-v2",
+	"webDir": "www",
+	"bundledWebRuntime": false
 }
