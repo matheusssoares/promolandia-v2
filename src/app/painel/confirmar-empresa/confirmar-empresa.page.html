@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Dados da empresa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-text color="dark">
+      <p><b>CNPJ:</b></p>
+      <p class="margin-top-16">{{ empresa.cnpj }}</p>
+    </ion-text>
+
+    <ion-text color="dark">
+      <p><b>NOME:</b></p>
+      <p class="margin-top-16">{{ empresa.nome }}</p>
+    </ion-text>
+
+    <ion-text color="dark">
+      <p><b>EMAIL:</b></p>
+      <p class="margin-top-16">{{ empresa.email }}</p>
+    </ion-text>
+
+    <ion-text color="dark">
+      <p><b>NOME FANTASIA:</b></p>
+      <p class="margin-top-16">{{ empresa.fantasia }}</p>
+    </ion-text>
+
+    <ion-text color="dark">
+      <p><b>ATIVIDADE PRINCIPAL:</b></p>
+      <p class="margin-top-16">{{ empresa.atividadePrincipal.text }}</p>
+    </ion-text>
+
+    <ion-text color="dark">
+      <p><b>NATUREZA JURÍDICA:</b></p>
+      <p class="margin-top-16">{{ empresa.naturezaJuridica }}</p>
+    </ion-text>
+
+    <ion-text color="dark">
+      <p><b>PORTE:</b></p>
+      <p class="margin-top-16">{{ empresa.porte }}</p>
+    </ion-text>
+
+    <ion-text color="dark">
+      <p><b>ABERTURA:</b></p>
+      <p class="margin-top-16">{{ empresa.abertura }}</p>
+    </ion-text>
+
+    <ion-text color="dark">
+      <p><b>TIPO:</b></p>
+      <p class="margin-top-16">{{ empresa.tipo }}</p>
+    </ion-text>
+  </ion-card>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-button (click)="onClick()" class="btn-size" expand="block">
+        Confirmar
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

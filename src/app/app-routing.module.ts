@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthService } from './providers/auth.service';
 
 const routes: Routes = [
   {
@@ -26,7 +27,18 @@ const routes: Routes = [
   },
   {
     path: 'painel/cadastrar-empresa',
-    loadChildren: () => import('./painel/cadastrar-empresa/cadastrar-empresa.module').then( m => m.CadastrarEmpresaPageModule)
+    loadChildren: () => import('./painel/cadastrar-empresa/cadastrar-empresa.module').then( m => m.CadastrarEmpresaPageModule),
+    canActivate: [AuthService]
+  },
+  {
+    path: 'painel/confirmar-empresa',
+    loadChildren: () => import('./painel/confirmar-empresa/confirmar-empresa.module').then( m => m.ConfirmarEmpresaPageModule),
+    canActivate: [AuthService]
+  },
+  {
+    path: 'painel/dashboard',
+    loadChildren: () => import('./painel/dashboard/dashboard.module').then( m => m.DashboardPageModule),
+    canActivate: [AuthService]
   }
 ];
 @NgModule({

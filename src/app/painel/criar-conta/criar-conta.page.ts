@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { RoutesService } from 'src/app/providers/routes.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Observable, of } from 'rxjs';
 import { AuthService } from 'src/app/providers/auth.service';
 
 @Component({
@@ -36,8 +35,13 @@ export class CriarContaPage implements OnInit {
   }
 
   async submitForm() {
-    const submit = await this.authService.createAccount(this.form.value.email, this.form.value.password);
-    console.log(submit);
+    await this.authService.showLoading('Criando conta...');
+    const submit = await this.authService.createAccount(this.form.value);
+    if(submit) {
+      // eslint-disable-next-line no-debugger
+      this.navCtrl.navigateRoot(['painel/dashboard']);
+      this.authService.hideLoading();
+    }
 
   }
 

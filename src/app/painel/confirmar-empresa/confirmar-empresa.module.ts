@@ -4,22 +4,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CadastrarEmpresaPageRoutingModule } from './cadastrar-empresa-routing.module';
+import { ConfirmarEmpresaPageRoutingModule } from './confirmar-empresa-routing.module';
 
-import { CadastrarEmpresaPage } from './cadastrar-empresa.page';
+import { ConfirmarEmpresaPage } from './confirmar-empresa.page';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
-import { BrMaskerModule } from 'br-mask';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CadastrarEmpresaPageRoutingModule,
+    ConfirmarEmpresaPageRoutingModule,
     SharedModule,
-    ReactiveFormsModule,
-    BrMaskerModule
+    ReactiveFormsModule
   ],
-  declarations: [CadastrarEmpresaPage]
+  declarations: [ConfirmarEmpresaPage]
 })
-export class CadastrarEmpresaPageModule {}
+export class ConfirmarEmpresaPageModule {}

@@ -8,7 +8,6 @@ import { SlideParceirosComponent } from 'src/app/components/slide-parceiros/slid
 import { CustomHeaderComponent } from 'src/app/components/custom-header/custom-header.component';
 
 
-
 @NgModule({
   declarations: [
     HeaderTopComponent,

@@ -1,0 +1,24 @@
+ion-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 55px;
+}
+
+/* .back-button {
+  margin-start: 0;
+} */
+
+ion-title {
+  text-align: center;
+  width: 100%;
+}
+ion-content {
+  --background: #f2eeee;
+}
+ion-card {
+  padding: 16px;
+}
+.margin-top-16 {
+  margin-top: -10px
+}

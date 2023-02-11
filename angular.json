@@ -78,7 +78,8 @@
             "browserTarget": "app:build",
             "ssl": true,
             "sslCert": ".ionic/ssl/cert.pem",
-            "sslKey": ".ionic/ssl/key.pem"
+            "sslKey": ".ionic/ssl/key.pem",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
