@@ -1,0 +1,47 @@
+<app-header-admin [modelHeader]="2" [nome]="nome" [imagem]="imagem"></app-header-admin>
+
+<ion-content>
+  <ion-grid>
+    <ion-row style="display: flex; align-items: center; justify-content: space-between; padding: 0 10px;">
+      <ion-col size="auto">
+        <p class="title-page">Categorias</p>
+      </ion-col>
+      <ion-col size="auto" *ngIf="categorias.length > 0">
+        <ion-button class="btn-add" size="small" fill="outline" (click)="addCategory()">Adicionar</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="categorias.length === 0">
+      <ion-col size="12" class="ion-text-center">
+        <img class="empty" src="../../../assets/img/empty.png" alt="">
+        <p>Você não possui categorias cadastradas.</p>
+        <ion-button color="primary" (click)="addCategory()" expand="block" fill="outline">
+          Adicionar categorias
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ng-container *ngIf="categorias.length > 0">
+      <app-list-category [model]="categorias"></app-list-category>
+    </ng-container>
+
+    <ion-row style="display: flex; align-items: center; justify-content: space-between; padding: 0 10px;">
+      <ion-col size="auto">
+        <p class="title-page">Produtos</p>
+      </ion-col>
+      <ion-col size="auto" *ngIf="produtos.length > 0">
+        <ion-button class="btn-add" size="small" fill="outline" (click)="addProduct()">Adicionar</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <img class="empty" src="../../../assets/img/empty.png" alt="">
+        <p>Você não possui produtos cadastrados.</p>
+        <ion-button color="primary" (click)="addProduct()" expand="block" fill="outline">
+          Adicionar produtos
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

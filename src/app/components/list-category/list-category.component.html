@@ -1,0 +1,6 @@
+<div class="scroll">
+  <ion-chip *ngFor="let i of model" class="chip" (click)="openAction(i)">
+    <ion-label>{{ i.nome }}</ion-label>
+    <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+  </ion-chip>
+</div>

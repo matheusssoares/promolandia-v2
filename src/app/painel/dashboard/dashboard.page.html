@@ -1,11 +1,56 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>dashboard</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header-admin [modelHeader]="1" [nome]="nome" [imagem]="imagem"></app-header-admin>
 
-<ion-content>
-<ion-button (click)="logout()" expand="block" fill="clear" shape="round">
-  Logout
-</ion-button>
+<ion-content class="admin">
+  <ion-grid>
+    <ion-list *ngIf="!loaded">
+      <ion-list-header>
+        <ion-skeleton-text [animated]="true" style="width: 80px"></ion-skeleton-text>
+      </ion-list-header>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-row *ngIf="loaded">
+      <ion-col size="12">
+        <ion-text class="title-page">Minhas empresas</ion-text>
+      </ion-col>
+    </ion-row>
+
+    <div class="full-width" *ngIf="loaded">
+      <ion-list lines="inset">
+        <ng-container *ngFor="let i of company">
+        <ion-item (click)="goTo(i)">
+            <ion-thumbnail slot="start">
+              <img [src]="i.logo || '../../../assets/img/empresa.jpg'" alt="Thumbnail">
+            </ion-thumbnail>
+            <ion-label>
+              <h2>{{ i.fantasia }}</h2>
+              <p>{{ i.cnpj }}</p>
+            </ion-label>
+            <ion-button color="dark" fill="clear" slot="end">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </ion-button>
+          </ion-item>
+        </ng-container>
+        <hr>
+      </ion-list>
+    </div>
+  </ion-grid>
+
 </ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-button (click)="newCompany()" expand="block" color="primary">Cadastrar nova</ion-button>
+  </ion-toolbar>
+</ion-footer>

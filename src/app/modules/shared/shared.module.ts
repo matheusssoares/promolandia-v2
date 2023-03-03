@@ -6,6 +6,8 @@ import { SlideBannerComponent } from 'src/app/components/slide-banner/slide-bann
 import { SlideAnunciosComponent } from 'src/app/components/slide-anuncios/slide-anuncios.component';
 import { SlideParceirosComponent } from 'src/app/components/slide-parceiros/slide-parceiros.component';
 import { CustomHeaderComponent } from 'src/app/components/custom-header/custom-header.component';
+import { HeaderAdminComponent } from 'src/app/components/header-admin/header-admin.component';
+import { AdicionarCategoriaComponent } from 'src/app/components/adicionar-categoria/adicionar-categoria.component';
 
 
 @NgModule({
@@ -14,18 +16,20 @@ import { CustomHeaderComponent } from 'src/app/components/custom-header/custom-h
     SlideBannerComponent,
     SlideAnunciosComponent,
     SlideParceirosComponent,
-    CustomHeaderComponent
+    CustomHeaderComponent,
+    HeaderAdminComponent
   ],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule.forRoot()
   ],
   exports: [
     HeaderTopComponent,
     SlideBannerComponent,
     SlideAnunciosComponent,
     SlideParceirosComponent,
-    CustomHeaderComponent
+    CustomHeaderComponent,
+    HeaderAdminComponent
   ]
 })
 export class SharedModule { }

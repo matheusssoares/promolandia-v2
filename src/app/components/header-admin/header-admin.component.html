@@ -1,0 +1,54 @@
+
+<div class="header" *ngIf="modelHeader === 1">
+  <img [src]="imagem ? imagem : '../../../assets/img/user.png'" alt="profile" class="logo">
+  <div class="notification-icon">
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="showNotifications()">
+        <ion-icon name="notifications-outline"></ion-icon>
+        <div class="badge" *ngIf="notificationsCount > 0">{{notificationsCount}}</div>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+  <div class="notification-icon">
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="showNotifications()">
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+  <h3 class="text-user">Olá, {{ obterPrimeiroNome(nome) }}</h3>
+</div>
+
+<!--MODELO DE TOPO ADMIN 2-->
+<div class="header" *ngIf="modelHeader === 2">
+  <img [src]="imagem ? imagem : '../../../assets/img/user.png'" alt="profile" class="logo">
+
+  <div class="notification-icon">
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="showNotifications()">
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+  <div class="notification-icon">
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="showNotifications()">
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+  <div class="notification-icon">
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="showNotifications()">
+        <ion-icon name="chatbubble-outline"></ion-icon>
+        <div class="badge" *ngIf="notificationsCount > 0">{{notificationsCount}}</div>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+  <h3 class="text-user">{{ nome }}</h3>
+</div>

@@ -4,19 +4,21 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DashboardPageRoutingModule } from './dashboard-routing.module';
+import { MyCompanyPageRoutingModule } from './my-company-routing.module';
 
-import { DashboardPage } from './dashboard.page';
+import { MyCompanyPage } from './my-company.page';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
+import { ComponentsModule } from 'src/app/components/component.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DashboardPageRoutingModule,
-    SharedModule
+    MyCompanyPageRoutingModule,
+    SharedModule,
+    ComponentsModule
   ],
-  declarations: [DashboardPage]
+  declarations: [MyCompanyPage]
 })
-export class DashboardPageModule {}
+export class MyCompanyPageModule {}

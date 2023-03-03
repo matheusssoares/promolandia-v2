@@ -1,0 +1,15 @@
+.scroll {
+  overflow: auto;
+  white-space: nowrap;
+  background: transparent;
+  width: 100%;
+}
+.chip {
+  display: inline-block; width: auto; margin-right: 10px; padding-top: 10px;
+}
+.font-color .action-sheet-header {
+  color: var(--ion-color-dark) !important;
+}
+.cancelar {
+  color: var(--ion-color-danger);
+}

@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'painel/dashboard',
     loadChildren: () => import('./painel/dashboard/dashboard.module').then( m => m.DashboardPageModule),
     canActivate: [AuthService]
+  },
+  {
+    path: 'painel/minha-empresa/:key',
+    loadChildren: () => import('./painel/my-company/my-company.module').then( m => m.MyCompanyPageModule)
   }
 ];
 @NgModule({

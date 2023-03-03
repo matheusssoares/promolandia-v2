@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AlertController, LoadingController, ToastController } from '@ionic/angular';
-import firebase from 'firebase/compat/app';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Usuario } from '../models/usuario.model';
 import { Observable } from 'rxjs';
 import { map, switchMap, take, tap } from 'rxjs/operators';
 import { CanActivate, Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
+import firebase from 'firebase/compat/app';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private dataSubject = new BehaviorSubject<string>('update_data');
 
   constructor(
     private auth: AngularFireAuth,
@@ -101,7 +103,27 @@ export class AuthService {
     }
   }
 
-  async presentToast(message: string, duration?: 3000) {
+  async updateDb(collection: string, key: string, data: any) {
+    try {
+      const result = await this.db.collection(collection).doc(key).update(data).then(() => true);
+      // eslint-disable-next-line no-debugger
+      return result;
+
+    } catch (error) {
+      this.presentAlert('Opsss!', 'Algo deu errado.');
+    }
+  }
+
+  async deleteDb(collection: string, key: string) {
+    try {
+      const result = await this.db.collection(collection).doc(key).delete().then(() => true);
+      return result;
+    } catch (error) {
+      this.presentAlert('Opsss!', 'Algo deu errado.');
+    }
+  }
+
+  async presentToast(message: string, duration: number = 3000) {
     const toast = await this.toastController.create({
       message,
       duration,
@@ -183,4 +205,35 @@ export class AuthService {
       tap(logged => logged)
     );
   }
+
+  async getData(collecion: string, fieldPath: string, value: any, orderBy?: string) {
+    return this.db.collection(collecion, ref => ref.where(fieldPath, '==', value).orderBy(orderBy, 'asc')).valueChanges();
+  }
+
+  async validationData(collection: string, filter: Record<string, any>) {
+    let query = this.db.collection(collection).ref.limit(1);
+    for (const [fieldPath, value] of Object.entries(filter)) {
+      query = query.where(fieldPath, '==', value);
+    }
+    const result = await query.get();
+    return result.size > 0;
+  }
+
+  public updateDataSubject(value: string): void {
+    this.dataSubject.next(value);
+  }
+
+  public getDataSubject() {
+    return this.dataSubject.asObservable();
+  }
+  async getDataAll(collection: string, ...filters: [string, firebase.firestore.WhereFilterOp, any][]) {
+    let query: firebase.firestore.Query<firebase.firestore.DocumentData> = this.db.collection(collection).ref;
+    for (const [fieldPath, opStr, value] of filters) {
+      if (value !== undefined) {
+        query = query.where(fieldPath, opStr, value);
+      }
+    }
+    return this.db.collection(collection, ref => query).valueChanges();
+  }
+
 }

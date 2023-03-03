@@ -1,5 +1,6 @@
 export interface Empresa {
   key: string;
+  logo?: string;
   abertura: string;
   situacao: string;
   tipo: string;

@@ -1,0 +1,53 @@
+.capa {
+  height: 7em;
+  width: 100%;
+  background-image: url('../../../assets/img/boas-vindas.jpg');
+  background-size: 100% 7em;
+}
+.title-page {
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 5px;
+  display: block;
+  margin-top: 16px;
+}
+
+ion-list {
+  margin: 0.7em;
+  padding: 3px 0px;
+}
+ion-item {
+  padding-bottom: 10px;
+}
+
+ion-thumbnail {
+  margin-left: -14px;
+  width: 3em;
+  height: 3em;
+}
+
+ion-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h2 {
+    font-size: 14px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
+ion-button {
+  margin-right: -10px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+ion-footer > ion-toolbar {
+  --padding-start: 16px;
+  --padding-end: 30px;
+  --padding-bottom: 24px;
+}

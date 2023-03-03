@@ -82,3 +82,13 @@ ion-button {
 .border-left-primary {
   border-left: 5px solid var(--ion-color-primary);
 }
+
+ion-content.admin {
+  --background: #FFF;
+}
+
+.space-line {
+  background-color: var(--ion-color-medium);
+  height: 1px;
+  width: 95%;
+}

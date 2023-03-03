@@ -22,6 +22,7 @@ export class LoginPage implements OnInit, OnDestroy {
 
   async ionViewDidEnter() {
    const result = await (await this.authService.isLogged()).toPromise().then((data) => data);
+
    if(result) {
     this.navCtrl.navigateRoot(['painel/dashboard']);
    }
@@ -39,7 +40,7 @@ export class LoginPage implements OnInit, OnDestroy {
   }
 
   async submitForm() {
-    await this.authService.showLoading('Criando conta...');
+    await this.authService.showLoading('Efetuando login...');
     const submit = await this.authService.login(this.form.value);
     if(submit) {
       this.navCtrl.navigateRoot(['painel/dashboard']);
